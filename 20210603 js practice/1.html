@@ -9,19 +9,38 @@
   <body>
     <h1> js연습 </h1>
 
-    <input type="button" value="night" onclick="
-      document.querySelector('body').style.backgroundColor = 'black';
-      document.querySelector('body').style.color = 'white';
-    ">
-    <input type="button" value="day" onclick="
-      document.querySelector('body').style.backgroundColor = 'white';
-      document.querySelector('body').style.color = 'black';
+    <input  type="button" value="night" onclick="
+    var target = document.querySelector('body');
+      if(this.value === 'night') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length){
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+        }
+      }
+      else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length){
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+      }
     ">
 
     <ol>
-      <li> 목차1 </li>
-      <li> 목차2 </li>
-      <li> 목차3 </li>
+      <li><a href="index.html"> 목차1 </a></li>
+      <li><a href="index.html"> 목차2 </a></li>
+      <li><a href="index.html"> 목차3 </a></li>
     </ol>
 
     <h2> 소제목 </h2>
